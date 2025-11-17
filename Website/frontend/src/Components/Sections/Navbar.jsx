@@ -35,7 +35,7 @@ function NavBar() {
 
             <LinkContainer to="/wishlist">
               <Nav.Link>
-              <i class="fa-solid fa-heart"></i>&nbsp; Wishlists
+              <i className="fa-solid fa-heart"></i>&nbsp; Wishlists
               </Nav.Link>
             </LinkContainer>
 
