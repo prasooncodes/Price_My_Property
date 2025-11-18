@@ -1,0 +1,201 @@
+/* AllFlats.css */
+
+/* General Page Background */
+.all-flats-page {
+    background-color: #1a1a2e; /* Dark theme background */
+    min-height: 100vh;
+    padding-bottom: 50px;
+    color: #e0e0e0; /* Default text color */
+}
+
+/* Page Title */
+.all-flats-page h2 {
+    color: #fff;
+    text-align: center;
+    padding: 40px 0 30px;
+    font-size: 2.8rem; /* Slightly larger title */
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+/* Card Styling */
+.property-card {
+    background-color: #1e1e2d; /* Darker background for card */
+    color: #e0e0e0; /* Lighter text color */
+    border-radius: 12px;
+    border: 1px solid #3a3a5a; /* Subtle border */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    height: 100%; /* Ensure cards in a row have equal height */
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.property-card .card-img-col {
+    height: 100%; /* Make image column fill card height */
+}
+
+.property-card .card-img {
+    height: 100%;
+    max-height: 250px; /* Limit image height for consistency on desktop */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px 0 0 12px; /* Rounded only on left for desktop */
+    transition: transform 0.3s ease;
+}
+
+.property-card .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property-card .card-title {
+    font-size: 1.6rem; /* Slightly larger title */
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #00bcd4; /* Accent color for titles */
+}
+
+.property-card .card-subtitle {
+    font-size: 1rem;
+    color: #b0b0d0;
+    margin-bottom: 15px;
+}
+
+.property-card .price-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00e676; /* Green accent for price */
+    margin-bottom: 10px;
+}
+
+.property-card .details-text {
+    font-size: 0.95rem;
+    color: #c0c0e0;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.property-card .details-text svg {
+    color: #00bcd4; /* Icon color */
+    font-size: 1.1em; /* Slightly larger icons */
+}
+
+/* Buttons */
+.property-card .btn-outline-primary-custom { /* Custom class for outline button */
+    background-color: transparent;
+    border-color: #007bff;
+    color: #007bff;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.property-card .btn-outline-primary-custom:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.property-card .btn-primary-custom { /* Custom class for solid button */
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.property-card .btn-primary-custom:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+
+.property-card .wishlist-button {
+    background: none;
+    border: none;
+    color: #e91e63; /* Heart icon color */
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    padding: 0; /* Remove default button padding */
+    line-height: 1; /* Adjust line height for icon sizing */
+}
+
+.property-card .wishlist-button:hover {
+    transform: scale(1.1);
+    color: #ff4081; /* Lighter pink on hover */
+}
+
+/* General Link Styling */
+.property-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Loading and Error Messages */
+.all-flats-page .loading-message,
+.all-flats-page .error-message,
+.all-flats-page .no-properties-message,
+.all-flats-page .end-of-list-message {
+    color: #ccc;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .property-card {
+        flex-direction: column; /* Stack image and content on small screens */
+    }
+    .property-card .card-img {
+        max-height: 200px; /* Adjust image height for mobile */
+        border-radius: 12px 12px 0 0 !important; /* Rounded top corners for mobile */
+    }
+    .property-card .card-body {
+        padding: 15px;
+    }
+    .property-card .card-title {
+        font-size: 1.4rem;
+    }
+    .property-card .card-subtitle {
+        font-size: 0.9rem;
+    }
+    .property-card .price-text {
+        font-size: 1.6rem;
+    }
+    .property-card .details-text {
+        font-size: 0.85rem;
+        flex-wrap: wrap; /* Allow text to wrap if too long */
+    }
+    .property-card .details-text svg {
+         font-size: 1em;
+    }
+    .property-card .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .property-card .action-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
