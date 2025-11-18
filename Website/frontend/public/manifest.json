@@ -1,15 +1,3 @@
-{
-  "short_name": "Property Price Predictor",
-  "name": "Real Estate Price Prediction Platform",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#0e1117",
-  "background_color": "#ffffff"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8fde76f566c2e43ff301c0c3be11791ec77d026a69de55c0855afcd5d9355f3b
+size 334
