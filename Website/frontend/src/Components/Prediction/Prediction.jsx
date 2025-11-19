@@ -15,7 +15,11 @@ const Predict = () => {
     // Predicted Result
     const [data, setData] = useState(null);
 
+    const BACKEND_API_URL = process.env.REACT_APP_BACKEND_API_URL || 'http://localhost:4000/api/';
+    const DJANGO_API_URL = process.env.REACT_APP_DJANGO_API_URL || 'http://localhost:8000/';
+
     const fetchData = async (sessionId) => {
+        if (!sessionId) return;
         try {
             const response = await axios.get(`${process.env.REACT_APP_DJANGO_API_URL}fetchdata/?session_id=${sessionId}`);
             setData(response.data);
@@ -26,7 +30,7 @@ const Predict = () => {
 
 
     useEffect(() => {
-        fetchData();
+        // fetchData();
         const savedHistory = localStorage.getItem('searchHistory');
         if (savedHistory) {
             setHistory(JSON.parse(savedHistory));
@@ -139,7 +143,7 @@ const Predict = () => {
     // Recommendation function 
     const getSuggestion = async () => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_DJANGO_API_URL}recommend/Prediction-recommendations/`, FormData);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API_URL}prediction-recommendation`, FormData);
             const result = response.data;
             // console.log(result)
             setPredictedData(result)
