@@ -23,7 +23,11 @@ const Predict = () => {
     const [FormData, setFormData] = useState({});
     const [predictedData, setPredictedData] = useState();
 
+    const BACKEND_API_URL = process.env.REACT_APP_BACKEND_API_URL || 'http://localhost:4000/api/';
+    const DJANGO_API_URL = process.env.REACT_APP_DJANGO_API_URL || 'http://localhost:8000/';
+
     const fetchData = async (sessionId) => {
+        if (!sessionId) return;
         try {
             const response = await axios.get(`${process.env.REACT_APP_DJANGO_API_URL}fetchdata/?session_id=${sessionId}`);
             setData(response.data);
@@ -33,7 +37,7 @@ const Predict = () => {
     };
 
     useEffect(() => {
-        fetchData();
+        // fetchData();
         const savedHistory = localStorage.getItem('searchHistory');
         if (savedHistory) setHistory(JSON.parse(savedHistory));
     }, []);

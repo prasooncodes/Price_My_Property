@@ -1,23 +1,3 @@
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "Realestate Backend",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "author": "Dipanjan Pathak",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "mongoose": "^8.6.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.6"
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:827c9fd6290db96744b481ac115acda4d6f208cd8ff97ac8429d78fcf24e7b46
+size 496
